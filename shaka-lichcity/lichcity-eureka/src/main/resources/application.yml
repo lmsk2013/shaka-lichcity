@@ -1,19 +1,19 @@
-#---
-#spring:
-#  application:
-#    name: lichcity-eureka
-#
-#server:
-#  port: 8000
-#
-#eureka:
-#  instance:
-#    # 多实例下hostname必须不同
-#    hostname: localhost
-#  client:
-#    # 标识是否从EurekaServer中获取注册信息，默认是 true （多实例）
-#    fetch-registry: false
-#    # 是否将自己注册到Eureka Server，默认是 true  （多实例）
-#    register-with-eureka: false
-#    service-url:
-#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+---
+spring:
+  application:
+    name: lichcity-eureka
+
+server:
+  port: 8000
+
+eureka:
+  instance:
+    # 多实例下hostname必须不同
+    hostname: localhost
+  client:
+    # 标识是否从EurekaServer中获取注册信息，默认是 true （多实例）
+    fetch-registry: false
+    # 是否将自己注册到Eureka Server，默认是 true  （多实例）
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
