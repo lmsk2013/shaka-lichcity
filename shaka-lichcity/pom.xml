@@ -9,8 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>lichcity-eureka</module>
-        <module>lich-zuul</module>
+        <module>lichcity-zuul</module>
         <module>lichcity-service</module>
+        <module>lichcity-album-service</module>
     </modules>
 
     <!-- 项目的打包类型，即项目的发布形式,默认为jar，作为聚合项目的父模块，必须制定为pom -->
