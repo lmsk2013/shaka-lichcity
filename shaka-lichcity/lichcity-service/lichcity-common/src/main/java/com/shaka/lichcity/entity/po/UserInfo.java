@@ -1,4 +1,4 @@
-package com.shaka.lichcity.entity;
+package com.shaka.lichcity.entity.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

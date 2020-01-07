@@ -37,7 +37,6 @@ public class AfterProcessingFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-
 		RequestContext ctx = RequestContext.getCurrentContext();
 
 		HttpServletRequest request = ctx.getRequest();
@@ -49,5 +48,8 @@ public class AfterProcessingFilter extends ZuulFilter {
 		log.info("请求uri: {}, 消耗时间: {}ms", uri, duration/100);
 
 		return null;
+
 	}
+
+
 }
