@@ -31,12 +31,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!-- Mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
+        <!-- 通用模块 -->
         <dependency>
             <groupId>com.shaka.lichcity</groupId>
             <artifactId>lichcity-common</artifactId>
