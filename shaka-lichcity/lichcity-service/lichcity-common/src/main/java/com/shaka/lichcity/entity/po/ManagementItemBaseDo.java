@@ -20,15 +20,20 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class ManagementItemBaseDo extends BaseDo{
 
+	/**管理项名称**/
+	@Basic
+	@Column(name = "name")
+	private String name ;
+
 	/**创建人**/
 	@Basic
 	@Column(name = "creator")
-	private String  creator ;
+	private String creator ;
 
 	/**修改人**/
 	@Basic
 	@Column(name = "modifier")
-	private String  modifier ;
+	private String modifier ;
 
 	/**是否逻辑删除**/
 	@Basic
@@ -38,5 +43,5 @@ public class ManagementItemBaseDo extends BaseDo{
 	/**标注**/
 	@Basic
 	@Column(name = "remark")
-	private String  remark ;
+	private String remark ;
 }
