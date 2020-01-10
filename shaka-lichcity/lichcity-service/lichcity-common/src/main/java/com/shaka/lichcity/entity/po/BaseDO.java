@@ -19,7 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class BaseDo {
+public class BaseDO {
 
 	/**主键**/
 	@Id

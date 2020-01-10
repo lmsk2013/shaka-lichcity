@@ -18,7 +18,7 @@ import javax.persistence.*;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "tbl_user_info")
-public class TblUserInfoDo extends BaseDo{
+public class TblUserInfoDO extends BaseDO{
 
 	/**用户名**/
 	@Basic
@@ -52,5 +52,5 @@ public class TblUserInfoDo extends BaseDo{
 	 * **/
 	@Basic
 	@Column(name = "sex")
-	private int sex ;
+	private Integer sex ;
 }

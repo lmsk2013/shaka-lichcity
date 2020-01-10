@@ -18,7 +18,7 @@ import javax.persistence.MappedSuperclass;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class ManagementItemBaseDo extends BaseDo{
+public class ManagementItemBaseDO extends BaseDO{
 
 	/**管理项名称**/
 	@Basic
@@ -38,7 +38,7 @@ public class ManagementItemBaseDo extends BaseDo{
 	/**是否逻辑删除**/
 	@Basic
 	@Column(name = "is_deleted",columnDefinition="int default 1",insertable = false,nullable = false)
-	private int deleted ;
+	private Integer isDeleted ;
 
 	/**标注**/
 	@Basic

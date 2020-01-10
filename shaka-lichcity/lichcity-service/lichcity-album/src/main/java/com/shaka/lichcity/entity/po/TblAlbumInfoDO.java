@@ -18,30 +18,36 @@ import javax.persistence.*;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "tbl_album_info")
-public class TblAlbumInfoDo extends ManagementItemBaseDo{
+public class TblAlbumInfoDO extends ManagementItemBaseDO{
+
+	/**相册页面样式类型Id**/
+	@Basic
+	@Column(name = "style")
+	private String style;
 
 	/**动效类型**/
 	@Basic
 	@Column(name = "animation_type")
-	private int animationType ;
+	private String animationType ;
+
+	/**封面链接**/
+	@Basic
+	@Column(name = "cover_url")
+	private String coverUrl ;
+
+	/**扉页链接**/
+	@Basic
+	@Column(name = "title_page_url")
+	private String titlePageUrl ;
+
+	/**公司简介页面id**/
+	@Basic
+	@Column(name = "company_profile_page_id")
+	private Long companyProfilePageId ;
 
 	/**目录id**/
 	@Basic
 	@Column(name = "catalog_id")
 	private Long catalogId ;
 
-	/**扉页id**/
-	@Basic
-	@Column(name = "title_page_id")
-	private Long titlePageId ;
-
-	/**封面id**/
-	@Basic
-	@Column(name = "cover_id")
-	private Long coverId ;
-
-	/**公司简介页面id**/
-	@Basic
-	@Column(name = "company_profile_page_id")
-	private String companyProfilePageId ;
 }
