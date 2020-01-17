@@ -1,6 +1,6 @@
 package com.shaka.lichcity.dao;
 
-import com.shaka.lichcity.entity.po.TblCatalogItemInfoDO;
+import com.shaka.lichcity.pojo.entity.TblCatalogItemInfoDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -12,5 +12,12 @@ import java.util.List;
 public interface TblCatalogItemInfoDao extends
 		JpaRepository<TblCatalogItemInfoDO,Long> {
 
-	List<TblCatalogItemInfoDO> findAllByCatalogPageId(Long id);
+	/***
+	 * description:根据pageId查询所有菜单项
+	 * @author yuanzhen
+	 * @date 2020/1/16
+	 * @param pageId
+	 * @return java.util.List<com.shaka.lichcity.entity.po.TblCatalogItemInfoDO>
+	 */
+	List<TblCatalogItemInfoDO> findAllByCatalogPageId(Long pageId);
 }

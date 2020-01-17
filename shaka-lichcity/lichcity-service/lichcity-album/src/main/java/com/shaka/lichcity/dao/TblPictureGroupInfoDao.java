@@ -1,6 +1,6 @@
 package com.shaka.lichcity.dao;
 
-import com.shaka.lichcity.entity.po.TblPictureGroupInfoDO;
+import com.shaka.lichcity.pojo.entity.TblPictureGroupInfoDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

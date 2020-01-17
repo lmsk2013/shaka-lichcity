@@ -1,6 +1,6 @@
 package com.shaka.lichcity.service;
 
-import com.shaka.lichcity.entity.dto.AlbumInfoDTO;
+import com.shaka.lichcity.pojo.dto.AlbumInfoDTO;
 
 /**
  * 相册相关服务接口定义

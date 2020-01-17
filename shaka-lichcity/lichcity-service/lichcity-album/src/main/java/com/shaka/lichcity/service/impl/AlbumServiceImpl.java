@@ -1,18 +1,20 @@
 package com.shaka.lichcity.service.impl;
 
-import com.shaka.lichcity.dao.*;
-import com.shaka.lichcity.entity.dto.AlbumInfoDTO;
-import com.shaka.lichcity.entity.po.TblAlbumInfoDO;
-import com.shaka.lichcity.entity.po.TblCatalogItemInfoDO;
-import com.shaka.lichcity.entity.po.TblPageInfoDO;
+import com.shaka.lichcity.dao.TblAlbumInfoDao;
+import com.shaka.lichcity.dao.TblCatalogItemInfoDao;
+import com.shaka.lichcity.dao.TblPageInfoDao;
+import com.shaka.lichcity.dao.TblPictureGroupInfoDao;
+import com.shaka.lichcity.pojo.dto.AlbumInfoDTO;
+import com.shaka.lichcity.pojo.entity.TblAlbumInfoDO;
+import com.shaka.lichcity.pojo.entity.TblCatalogItemInfoDO;
+import com.shaka.lichcity.pojo.entity.TblPageInfoDO;
 import com.shaka.lichcity.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author 袁振
@@ -59,14 +61,22 @@ public class AlbumServiceImpl implements AlbumService {
 	 * @return com.shaka.lichcity.entity.dto.AlbumInfoDTO
 	 */
 	@Override
+	@Cacheable(cacheNames = {"album","album"} , key = "#id")
 	public AlbumInfoDTO getAlbumInfoById(Long id) {
 		//1.获取相册基本信息
-		TblAlbumInfoDO albumInfoDO = albumDao.getOne(id);
+		TblAlbumInfoDO albumInfoDO = albumDao.findById(id).orElse(null);
+		if (null == albumInfoDO){
+			return null ;
+		}
 		//2.获取目录信息
-		TblPageInfoDO catalogDO = pageDao.getOne(albumInfoDO.getCatalogId());
-		List<TblCatalogItemInfoDO> catalogItems = catalogItemDao.findAllByCatalogPageId(catalogDO.getId());
-		//3.获取公司简介页信息
-		TblPageInfoDO profilePage = pageDao.getOne(albumInfoDO.getCompanyProfilePageId());
+		TblPageInfoDO catalogDO = pageDao.findById(albumInfoDO.getCatalogId()).orElse(null);
+		//3.获取目录项信息
+		List<TblCatalogItemInfoDO> catalogItems = new ArrayList<>();
+		if (null != catalogDO){
+			catalogItems = catalogItemDao.findAllByCatalogPageId(catalogDO.getId());
+		}
+		//4.获取公司简介页信息
+		TblPageInfoDO profilePage = pageDao.findById(albumInfoDO.getCompanyProfilePageId()).orElse(null);
 		return new AlbumInfoDTO(albumInfoDO,catalogDO,catalogItems,profilePage);
 	}
 }
