@@ -19,11 +19,13 @@ public enum ResultCodeEnum {
 	/**请求未授权**/
 	UNAUTHORIZED(406,"请求未授权，跳转未授权提示页");
 
+	/**返回码**/
 	private Integer code ;
 
+	/**错误信息**/
 	private String message ;
 
-	private ResultCodeEnum(Integer code ,String message){
+	ResultCodeEnum(Integer code ,String message){
 		this.code = code;
 		this.message = message;
 	}
