@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 样册前段空气器
+ * 相册前端控制器
  * @author 袁振
  * @date 2020/1/14 15:51
  */
