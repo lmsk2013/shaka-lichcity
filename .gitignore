@@ -1,6 +1,32 @@
-shaka-lichcity/.idea/.gitignore
-shaka-lichcity/.idea/misc.xml
-shaka-lichcity/.idea/modules.xml
-shaka-lichcity/.idea/shaka-lichcity.iml
-shaka-lichcity/.idea/vcs.xml
-shaka-lichcity/.idea/inspectionProfiles/Project_Default.xml
+### 目录忽略 ###
+/.gradle/
+**/build/
+/.settings/
+/bin/
+BackWeb/logs/
+/out/
+/target/
+
+*.class
+*.classpath
+*.project
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.vscode
+
+### JRebel
+rebel.xml
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+application-default.*
+init-local-database.sh
+values_yaml.spec
